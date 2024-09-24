@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CreditcardsService } from '../../services/creditcards.service';
 
 @Component({
@@ -12,6 +12,7 @@ export class DeleteComponent {
 
   constructor(
     private router: ActivatedRoute,
+    private route: Router,
     private creditcardsServices: CreditcardsService
   ) {
     this.creditCardId = parseInt(this.router.snapshot.paramMap.get('id') || '');
@@ -20,7 +21,7 @@ export class DeleteComponent {
     this.creditcardsServices
       .deleteCreditCard(this.creditCardId)
       .subscribe((data) => {
-        console.log('Deleted the credit card');
+        this.route.navigate(['creditcards']);
       });
   }
 }

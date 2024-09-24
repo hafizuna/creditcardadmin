@@ -1,7 +1,13 @@
 <mat-card class="mat-card">
   <h1>Credit Card Details</h1>
   <ng-container *ngIf="creditCardDetails">
-    {{ creditCardDetails.id }}
-    {{ creditCardDetails.name }}
+    <div>{{ creditCardDetails.id }}</div>
+    <div>{{ creditCardDetails.bankName }}</div>
+    <div>{{ creditCardDetails.description }}</div>
+    <div>{{ creditCardDetails.maxCredit }}</div>
+    <div>{{ creditCardDetails.interestRate }}</div>
+    <div>{{ creditCardDetails.createdDate }}</div>
+    <div>{{ creditCardDetails.updatedDate }}</div>
+    <div>{{ creditCardDetails.active }}</div>
   </ng-container>
 </mat-card>

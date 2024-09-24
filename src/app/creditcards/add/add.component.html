@@ -1,1 +1,119 @@
-<p>add works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Add New Credit Card</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form #creditCardForm="ngForm" (ngSubmit)="saveCreditCard()">
+      <div class="form-group">
+        <mat-form-field>
+          <label for="name">Name</label>
+          <input
+            matInput
+            name="name"
+            placeholder="Enter Credit Card Name"
+            [(ngModel)]="newCreditCard.name"
+          />
+          <mat-error
+            *ngIf="
+              creditCardForm.controls['name']?.touched &&
+              creditCardForm.controls['name']?.hasError('required')
+            "
+            >Name is required</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field>
+          <label for="bankName">Bank Name</label>
+          <input
+            matInput
+            name="bankName"
+            placeholder="Enter Bank Name"
+            [(ngModel)]="newCreditCard.bankName"
+          />
+          <mat-error
+            *ngIf="
+              creditCardForm.controls['bankName']?.touched &&
+              creditCardForm.controls['bankName']?.hasError('required')
+            "
+            >Bank Name is required</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field>
+          <label for="description"></label>
+          <textarea
+            name="description"
+            id=""
+            matInput
+            required
+            placeholder="Enter Description"
+            [(ngModel)]="newCreditCard.description"
+          ></textarea>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field>
+          <label for="maxCredit">Max Credit</label>
+          <input
+            matInput
+            name="maxCredit"
+            placeholder="Enter Max Credit"
+            [(ngModel)]="newCreditCard.maxCredit"
+          />
+          <mat-error
+            *ngIf="
+              creditCardForm.controls['maxCredit']?.touched &&
+              creditCardForm.controls['maxCredit']?.hasError('required')
+            "
+            >Bank Name is required</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field>
+          <label for="interestRate">Interest Rate</label>
+          <input
+            matInput
+            name="interestRate"
+            placeholder="Enter Interest Rate"
+            [(ngModel)]="newCreditCard.interestRate"
+          />
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-checkbox name="active" [(ngModel)]="newCreditCard.active" required
+          >Active</mat-checkbox
+        >
+      </div>
+
+      <div class="form-group">
+        <mat-label>Choose Creation Date</mat-label>
+        <input
+          matInput
+          required
+          name="createdDate"
+          [(ngModel)]="newCreditCard.createdDate"
+          [matDatepicker]="createdDatePicker"
+          minlength="3"
+          placeholder="Select Date"
+        />
+        <mat-datepicker-toggle
+          matSuffix
+          [for]="createdDatePicker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #createdDatePicker></mat-datepicker>
+      </div>
+      <div class="form-group">
+        <button
+          mat-raised-button
+          color="primary"
+          [disabled]="!creditCardForm.valid"
+        >
+          Add New Credit Card
+        </button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

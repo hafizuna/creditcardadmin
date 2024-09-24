@@ -6,9 +6,9 @@ export interface CreditCard {
   maxCredit: number;
   interestRate: number;
   active: boolean;
-  recommendedScore: string;
-  termsAndConditions: string;
-  annualFee: number;
+  // recommendedScore: string;
+  // termsAndConditions: string;
+  // annualFee: number;
   createdDate: string;
   updatedDate: string;
 }
