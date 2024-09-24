@@ -8,15 +8,20 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
-  declarations: [AppComponent, PageNotFoundComponent],
+  declarations: [AppComponent, PageNotFoundComponent, SidebarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
+    HttpClientModule,
+    MatListModule,
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],

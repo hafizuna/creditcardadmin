@@ -7,7 +7,7 @@ import { CreditCard } from '../models/credit-card';
   providedIn: 'root',
 })
 export class CreditcardsService {
-  private apiUrl = '';
+  private apiUrl = 'http://localhost:3000/creditcards';
   constructor(private httpClient: HttpClient) {}
 
   //Crud Functionality

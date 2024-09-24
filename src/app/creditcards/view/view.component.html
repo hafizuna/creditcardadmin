@@ -1,1 +1,7 @@
-<p>view works!</p>
+<mat-card class="mat-card">
+  <h1>Credit Card Details</h1>
+  <ng-container *ngIf="creditCardDetails">
+    {{ creditCardDetails.id }}
+    {{ creditCardDetails.name }}
+  </ng-container>
+</mat-card>
